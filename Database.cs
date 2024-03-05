@@ -48,6 +48,12 @@ namespace Database
       FileManager.AppendLines(this.db_path, this.data);
     }
 
+    public void Save() {
+      this.WriteData();
+      this.WriteCounter();
+
+    }
+
     public void Add(string[] line, bool gen_id = true)
     {
       if (gen_id)
@@ -128,7 +134,7 @@ namespace Database
         return -1;
 
       this.data.RemoveAt(i);
-      this.counter--;
+      // this.counter--;
       return i;
     }
 
